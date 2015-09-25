@@ -35,11 +35,16 @@ angular.module('jkuri.confirmdialog', [])
 		var scope = tpl.scope();
 		$compile(tpl)(scope);
 
+		$document.bind('mousewheel', function(e) {
+			e.preventDefault();
+		});
+
 		return deffered.promise;
 	};
 
 	self.close = function () {
 		deffered.reject();
+		$document.unbind('mousewheel');
 		angular.element(tpl).remove();
 	};
 
@@ -89,8 +94,6 @@ angular.module('jkuri.confirmdialog', [])
 			setScopeValues(scope, attrs);
 
 			var $body = $document.find('body');
-
-			scope.show = false;
 
 			element.unbind('click');
 
