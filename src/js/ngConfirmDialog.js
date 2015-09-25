@@ -2,8 +2,8 @@ angular.module('jkuri.confirmdialog', [])
 
 .factory('ngConfirmDialogService', ['$document', '$q', '$compile', function($document, $q, $compile) {
 	var self = this,
-		$body = $document.find('body'),
-		tpl;
+	    $body = $document.find('body'),
+	    tpl;
 
 	var generateTpl = function (headerText, content, yesText, noText) {
 		var tpl = angular.element(
