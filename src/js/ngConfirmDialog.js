@@ -7,6 +7,7 @@ angular.module('jkuri.confirmdialog', [])
 
 	var generateTpl = function (headerText, content, yesText, noText) {
 		var tpl = angular.element(
+		'<div class="ng-confirm-dialog-overlay"></div>' +
 		'<div class="ng-confirm-dialog" ng-controller="ngConfirmDialogController as ncdctrl" ng-class="{\'load\': true}">' +
 		'  <div class="ncd-header">' +
 		'    <h3>' + headerText + '</h3>' +
